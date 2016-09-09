@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A3BF21D1D6C0E38005C7458 /* BDSalesforceIntegrationWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850BC1D6BEF1C00217E69 /* BDSalesforceIntegrationWrapper.framework */; };
+		9AAF656E1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAF656D1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework */; };
+		9AAF656F1D795834002D4B2B /* BDSalesforceIntegrationWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAF656D1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework */; };
+		9AAF65701D795834002D4B2B /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAF656D1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AC850A61D6BEED600217E69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850A51D6BEED600217E69 /* main.m */; };
+		9AC850A91D6BEED600217E69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850A81D6BEED600217E69 /* AppDelegate.m */; };
+		9AC850AC1D6BEED600217E69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850AB1D6BEED600217E69 /* ViewController.m */; };
+		9AC850AF1D6BEED600217E69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC850AD1D6BEED600217E69 /* Main.storyboard */; };
+		9AC850B11D6BEED600217E69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AC850B01D6BEED600217E69 /* Assets.xcassets */; };
+		9AC850B41D6BEED600217E69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC850B21D6BEED600217E69 /* LaunchScreen.storyboard */; };
+		9AC850DD1D6C04F400217E69 /* BDAuthenticateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850D91D6C04F400217E69 /* BDAuthenticateData.m */; };
+		9AC850DE1D6C04F400217E69 /* BDIntegrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850DB1D6C04F400217E69 /* BDIntegrationManager.m */; };
+		9AC850E01D6C065900217E69 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850DF1D6C065900217E69 /* WebKit.framework */; };
+		9AC850E21D6C067400217E69 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850E11D6C067400217E69 /* AudioToolbox.framework */; };
+		9AC850E41D6C067B00217E69 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850E31D6C067B00217E69 /* AVFoundation.framework */; };
+		9AC850E61D6C068200217E69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850E51D6C068200217E69 /* CoreGraphics.framework */; };
+		9AC850E81D6C068B00217E69 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850E71D6C068B00217E69 /* CoreLocation.framework */; };
+		9AC850EA1D6C069500217E69 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850E91D6C069500217E69 /* CoreMotion.framework */; };
+		9AC850EC1D6C06A000217E69 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850EB1D6C06A000217E69 /* MapKit.framework */; };
+		9AC850EE1D6C06AC00217E69 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850ED1D6C06AC00217E69 /* SystemConfiguration.framework */; };
+		9AC850F01D6C06B200217E69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850EF1D6C06B200217E69 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A3BF21F1D6C0E39005C7458 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9AAF65701D795834002D4B2B /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9A3BF2261D6C14AE005C7458 /* BDPIntegrationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDPIntegrationManagerDelegate.h; path = Integration/BDPIntegrationManagerDelegate.h; sourceTree = "<group>"; };
+		9AAF656D1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BDSalesforceIntegrationWrapper.framework; sourceTree = "<group>"; };
+		9AC850A11D6BEED600217E69 /* BDSalesforceIntegrationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDSalesforceIntegrationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AC850A51D6BEED600217E69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9AC850A71D6BEED600217E69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9AC850A81D6BEED600217E69 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9AC850AA1D6BEED600217E69 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9AC850AB1D6BEED600217E69 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9AC850AE1D6BEED600217E69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9AC850B01D6BEED600217E69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AC850B31D6BEED600217E69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AC850B51D6BEED600217E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AC850BC1D6BEF1C00217E69 /* BDSalesforceIntegrationWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BDSalesforceIntegrationWrapper.framework; path = /Users/jasonxie/Documents/Bluedot/iOS/BDIntegrationWrapper/BDSalesforceIntegrationSample/BDSalesforceIntegrationWrapper.framework; sourceTree = "<absolute>"; };
+		9AC850D81D6C04F400217E69 /* BDAuthenticateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDAuthenticateData.h; path = Integration/BDAuthenticateData.h; sourceTree = "<group>"; };
+		9AC850D91D6C04F400217E69 /* BDAuthenticateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDAuthenticateData.m; path = Integration/BDAuthenticateData.m; sourceTree = "<group>"; };
+		9AC850DA1D6C04F400217E69 /* BDIntegrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDIntegrationManager.h; path = Integration/BDIntegrationManager.h; sourceTree = "<group>"; };
+		9AC850DB1D6C04F400217E69 /* BDIntegrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDIntegrationManager.m; path = Integration/BDIntegrationManager.m; sourceTree = "<group>"; };
+		9AC850DF1D6C065900217E69 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		9AC850E11D6C067400217E69 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9AC850E31D6C067B00217E69 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9AC850E51D6C068200217E69 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9AC850E71D6C068B00217E69 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9AC850E91D6C069500217E69 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		9AC850EB1D6C06A000217E69 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9AC850ED1D6C06AC00217E69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9AC850EF1D6C06B200217E69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9AC8509E1D6BEED600217E69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AC850F01D6C06B200217E69 /* UIKit.framework in Frameworks */,
+				9AC850EE1D6C06AC00217E69 /* SystemConfiguration.framework in Frameworks */,
+				9AAF656E1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework in Frameworks */,
+				9A3BF21D1D6C0E38005C7458 /* BDSalesforceIntegrationWrapper.framework in Frameworks */,
+				9AC850EC1D6C06A000217E69 /* MapKit.framework in Frameworks */,
+				9AAF656F1D795834002D4B2B /* BDSalesforceIntegrationWrapper.framework in Frameworks */,
+				9AC850EA1D6C069500217E69 /* CoreMotion.framework in Frameworks */,
+				9AC850E81D6C068B00217E69 /* CoreLocation.framework in Frameworks */,
+				9AC850E61D6C068200217E69 /* CoreGraphics.framework in Frameworks */,
+				9AC850E41D6C067B00217E69 /* AVFoundation.framework in Frameworks */,
+				9AC850E21D6C067400217E69 /* AudioToolbox.framework in Frameworks */,
+				9AC850E01D6C065900217E69 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9AC850981D6BEED600217E69 = {
+			isa = PBXGroup;
+			children = (
+				9AC850BF1D6BFB7500217E69 /* JB4A */,
+				9AC850BE1D6BFB6400217E69 /* PointSDK */,
+				9AC850A31D6BEED600217E69 /* BDSalesforceIntegrationSample */,
+				9AC850BB1D6BEEE600217E69 /* Frameworks */,
+				9AC850A21D6BEED600217E69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9AC850A21D6BEED600217E69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AC850A11D6BEED600217E69 /* BDSalesforceIntegrationSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9AC850A31D6BEED600217E69 /* BDSalesforceIntegrationSample */ = {
+			isa = PBXGroup;
+			children = (
+				9AC850D71D6C049E00217E69 /* Integration */,
+				9AC850A71D6BEED600217E69 /* AppDelegate.h */,
+				9AC850A81D6BEED600217E69 /* AppDelegate.m */,
+				9AC850AA1D6BEED600217E69 /* ViewController.h */,
+				9AC850AB1D6BEED600217E69 /* ViewController.m */,
+				9AC850AD1D6BEED600217E69 /* Main.storyboard */,
+				9AC850B01D6BEED600217E69 /* Assets.xcassets */,
+				9AC850B21D6BEED600217E69 /* LaunchScreen.storyboard */,
+				9AC850B51D6BEED600217E69 /* Info.plist */,
+				9AC850A41D6BEED600217E69 /* Supporting Files */,
+			);
+			path = BDSalesforceIntegrationSample;
+			sourceTree = "<group>";
+		};
+		9AC850A41D6BEED600217E69 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9AC850A51D6BEED600217E69 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9AC850BB1D6BEEE600217E69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AAF656D1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework */,
+				9AC850EF1D6C06B200217E69 /* UIKit.framework */,
+				9AC850ED1D6C06AC00217E69 /* SystemConfiguration.framework */,
+				9AC850EB1D6C06A000217E69 /* MapKit.framework */,
+				9AC850E91D6C069500217E69 /* CoreMotion.framework */,
+				9AC850E71D6C068B00217E69 /* CoreLocation.framework */,
+				9AC850E51D6C068200217E69 /* CoreGraphics.framework */,
+				9AC850E31D6C067B00217E69 /* AVFoundation.framework */,
+				9AC850E11D6C067400217E69 /* AudioToolbox.framework */,
+				9AC850DF1D6C065900217E69 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AC850BE1D6BFB6400217E69 /* PointSDK */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PointSDK;
+			path = BDSalesforceIntegrationSample;
+			sourceTree = "<group>";
+		};
+		9AC850BF1D6BFB7500217E69 /* JB4A */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = JB4A;
+			sourceTree = "<group>";
+		};
+		9AC850D71D6C049E00217E69 /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				9A3BF2261D6C14AE005C7458 /* BDPIntegrationManagerDelegate.h */,
+				9AC850D81D6C04F400217E69 /* BDAuthenticateData.h */,
+				9AC850D91D6C04F400217E69 /* BDAuthenticateData.m */,
+				9AC850DA1D6C04F400217E69 /* BDIntegrationManager.h */,
+				9AC850DB1D6C04F400217E69 /* BDIntegrationManager.m */,
+			);
+			name = Integration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9AC850A01D6BEED600217E69 /* BDSalesforceIntegrationSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AC850B81D6BEED600217E69 /* Build configuration list for PBXNativeTarget "BDSalesforceIntegrationSample" */;
+			buildPhases = (
+				9AC8509D1D6BEED600217E69 /* Sources */,
+				9AC8509E1D6BEED600217E69 /* Frameworks */,
+				9AC8509F1D6BEED600217E69 /* Resources */,
+				9A3BF21F1D6C0E39005C7458 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BDSalesforceIntegrationSample;
+			productName = BDSalesforceIntegrationSample;
+			productReference = 9AC850A11D6BEED600217E69 /* BDSalesforceIntegrationSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9AC850991D6BEED600217E69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Bluedot Innovation";
+				TargetAttributes = {
+					9AC850A01D6BEED600217E69 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 9AC8509C1D6BEED600217E69 /* Build configuration list for PBXProject "BDSalesforceIntegrationSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9AC850981D6BEED600217E69;
+			productRefGroup = 9AC850A21D6BEED600217E69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9AC850A01D6BEED600217E69 /* BDSalesforceIntegrationSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9AC8509F1D6BEED600217E69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AC850B41D6BEED600217E69 /* LaunchScreen.storyboard in Resources */,
+				9AC850B11D6BEED600217E69 /* Assets.xcassets in Resources */,
+				9AC850AF1D6BEED600217E69 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9AC8509D1D6BEED600217E69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AC850AC1D6BEED600217E69 /* ViewController.m in Sources */,
+				9AC850A91D6BEED600217E69 /* AppDelegate.m in Sources */,
+				9AC850DE1D6C04F400217E69 /* BDIntegrationManager.m in Sources */,
+				9AC850DD1D6C04F400217E69 /* BDAuthenticateData.m in Sources */,
+				9AC850A61D6BEED600217E69 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9AC850AD1D6BEED600217E69 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AC850AE1D6BEED600217E69 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9AC850B21D6BEED600217E69 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AC850B31D6BEED600217E69 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9AC850B61D6BEED600217E69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Debug;
+		};
+		9AC850B71D6BEED600217E69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Release;
+		};
+		9AC850B91D6BEED600217E69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"${PROJECT_DIR}/PointSDK/include",
+					"${PROJECT_DIR}/JB4A",
+				);
+				INFOPLIST_FILE = BDSalesforceIntegrationSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JB4A",
+					"$(PROJECT_DIR)/PointSDK",
+				);
+				OTHER_LDFLAGS = (
+					"-lBDPointSDK-${PLATFORM_NAME}",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluedotinnovation.SalesforceIntegration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Debug;
+		};
+		9AC850BA1D6BEED600217E69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"${PROJECT_DIR}/PointSDK/include",
+					"${PROJECT_DIR}/JB4A",
+				);
+				INFOPLIST_FILE = BDSalesforceIntegrationSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/JB4A",
+					"$(PROJECT_DIR)/PointSDK",
+				);
+				OTHER_LDFLAGS = (
+					"-lBDPointSDK-${PLATFORM_NAME}",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluedotinnovation.SalesforceIntegration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9AC8509C1D6BEED600217E69 /* Build configuration list for PBXProject "BDSalesforceIntegrationSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AC850B61D6BEED600217E69 /* Debug */,
+				9AC850B71D6BEED600217E69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AC850B81D6BEED600217E69 /* Build configuration list for PBXNativeTarget "BDSalesforceIntegrationSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AC850B91D6BEED600217E69 /* Debug */,
+				9AC850BA1D6BEED600217E69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9AC850991D6BEED600217E69 /* Project object */;
+}
