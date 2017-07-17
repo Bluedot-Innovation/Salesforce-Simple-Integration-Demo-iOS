@@ -99,16 +99,9 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
 
 - (void)authenticateBDPoint
 {
-#ifdef DEBUG
-    [BDLocationManager.instance authenticateWithApiKey:_authenticateData.pointApiKey
-                                           packageName:_authenticateData.pointPackageName
-                                              username:_authenticateData.pointUsername
-                                           endpointURL:[NSURL URLWithString:@"https://uat3.bluedotinnovation.com/pointapi-v1"]];
-#else
     [BDLocationManager.instance authenticateWithApiKey:_authenticateData.pointApiKey
                                            packageName:_authenticateData.pointPackageName
                                               username:_authenticateData.pointUsername];
-#endif
 }
 
 #pragma mark BDPLocationDelegate
