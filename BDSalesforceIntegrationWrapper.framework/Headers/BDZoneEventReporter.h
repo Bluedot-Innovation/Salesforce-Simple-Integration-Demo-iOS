@@ -7,11 +7,12 @@
 //
 
 #import "BDPZoneEventReporterDelegate.h"
+#import "BDZoneEvent.h"
 
 @interface BDZoneEventReporter : NSObject
 
 /**
- *  The delegate of BDZoneEventReporter with callback methods to indicate 
+ *  The delegate of BDZoneEventReporter with callback methods to indicate
  *  whether the zone event was reported successfully or not.
  */
 @property (nonatomic, assign) id<BDPZoneEventReporterDelegate> delegate;
@@ -24,30 +25,14 @@
 
 /**
  *  Report check-in event for given zone.
- *  @param salesforceSubscriberKey Salesforce subscriber key.
- *  @param zoneId ID of the triggered zone.
- *  @param apiKey API key for the app from HubExchange.
- *  @param packageName Package name for the app from HubExchange.
- *  @param username Email address for the app from HubExchange.
+ *  @param BDZoneEvent event containing information of given zone
  */
-- (void)reportCheckInWithSalesforceSubscriberKey:(NSString *) salesforceSubscriberKey
-                                          zoneId:(NSString *) zoneId
-                                          apiKey:(NSString *) apiKey
-                                     packageName:(NSString *) packageName
-                                        username:(NSString *) username;
+- (void)reportCheckInWithBDZoneEvent:(BDZoneEvent *) zoneEvent;
 
 /**
  *  Report check-out event for given zone.
- *  @param salesforceSubscriberKey Salesforce subscriber key.
- *  @param zoneId ID of the triggered zone.
- *  @param apiKey API key for the app from HubExchange.
- *  @param packageName Package name for the app from HubExchange.
- *  @param username Email address for the app from HubExchange.
+ *  @param BDZoneEvent event containing information of given zone
  */
-- (void)reportCheckOutWithSalesforceSubscriberKey:(NSString *) salesforceSubscriberKey
-                                           zoneId:(NSString *) zoneId
-                                           apiKey:(NSString *) apiKey
-                                      packageName:(NSString *) packageName
-                                         username:(NSString *) username;
+- (void)reportCheckOutWithBDZoneEvent:(BDZoneEvent *) zoneEvent;
 
 @end

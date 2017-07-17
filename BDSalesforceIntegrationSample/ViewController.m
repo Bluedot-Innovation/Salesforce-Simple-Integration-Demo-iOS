@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *etPushStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bdPointStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *zoneEventReporterStatus;
-@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+@property (weak, nonatomic) IBOutlet UITextView *errorTextView;
 
 @end
 
@@ -48,7 +48,9 @@
 - (void)reportFailedWithError:(NSError *)error
 {
     _zoneEventReporterStatus.text = @"Failed";
-    _errorLabel.text = error.localizedDescription;
+    
+   NSString *errorMessage = [NSString stringWithFormat:@"Zone event report error: %@", error.localizedDescription];
+   _errorTextView.text = [_errorTextView.text stringByAppendingString:errorMessage];
 }
 
 #pragma mark BDPIntegrationWrapperDelegate

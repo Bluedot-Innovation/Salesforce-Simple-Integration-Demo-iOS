@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A3BF21D1D6C0E38005C7458 /* BDSalesforceIntegrationWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850BC1D6BEF1C00217E69 /* BDSalesforceIntegrationWrapper.framework */; };
-		9AAF656E1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAF656D1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework */; };
-		9AAF656F1D795834002D4B2B /* BDSalesforceIntegrationWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAF656D1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework */; };
-		9AAF65701D795834002D4B2B /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAF656D1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4D418F651F1C924F00A1195F /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D418F641F1C924F00A1195F /* BDSalesforceIntegrationWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DE680691F1C737700D11BB0 /* BDDataModel.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4DE67EAA1F1C737000D11BB0 /* BDDataModel.bundle */; };
+		4DE6806A1F1C738500D11BB0 /* libJB4ASDK-4.8.0.20700001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE67E981F1C729900D11BB0 /* libJB4ASDK-4.8.0.20700001.a */; };
 		9AC850A61D6BEED600217E69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850A51D6BEED600217E69 /* main.m */; };
 		9AC850A91D6BEED600217E69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850A81D6BEED600217E69 /* AppDelegate.m */; };
 		9AC850AC1D6BEED600217E69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850AB1D6BEED600217E69 /* ViewController.m */; };
@@ -37,7 +36,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9AAF65701D795834002D4B2B /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */,
+				4D418F651F1C924F00A1195F /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,8 +44,64 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D418F641F1C924F00A1195F /* BDSalesforceIntegrationWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BDSalesforceIntegrationWrapper.framework; path = ../ios_release/BDSalesforceIntegrationWrapper.framework; sourceTree = "<group>"; };
+		4DE67E961F1C729800D11BB0 /* PICart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PICart.h; path = JB4A/PICart.h; sourceTree = "<group>"; };
+		4DE67E971F1C729800D11BB0 /* ETEventMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETEventMessage.h; path = JB4A/ETEventMessage.h; sourceTree = "<group>"; };
+		4DE67E981F1C729900D11BB0 /* libJB4ASDK-4.8.0.20700001.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libJB4ASDK-4.8.0.20700001.a"; path = "JB4A/libJB4ASDK-4.8.0.20700001.a"; sourceTree = "<group>"; };
+		4DE67E991F1C729900D11BB0 /* PICartItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PICartItem.h; path = JB4A/PICartItem.h; sourceTree = "<group>"; };
+		4DE67E9A1F1C729900D11BB0 /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ExactTargetEnhancedPushDataSource.h; path = JB4A/ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
+		4DE67E9B1F1C729900D11BB0 /* ETPush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETPush.h; path = JB4A/ETPush.h; sourceTree = "<group>"; };
+		4DE67E9C1F1C729900D11BB0 /* ETCloudPageDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETCloudPageDataSource.h; path = JB4A/ETCloudPageDataSource.h; sourceTree = "<group>"; };
+		4DE67E9D1F1C729A00D11BB0 /* ETEventRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETEventRegion.h; path = JB4A/ETEventRegion.h; sourceTree = "<group>"; };
+		4DE67E9E1F1C729A00D11BB0 /* ETRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETRegion.h; path = JB4A/ETRegion.h; sourceTree = "<group>"; };
+		4DE67E9F1F1C729A00D11BB0 /* PIOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PIOrder.h; path = JB4A/PIOrder.h; sourceTree = "<group>"; };
+		4DE67EA01F1C729A00D11BB0 /* ETAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETAnalytics.h; path = JB4A/ETAnalytics.h; sourceTree = "<group>"; };
+		4DE67EA11F1C729A00D11BB0 /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETLandingPagePresenter.h; path = JB4A/ETLandingPagePresenter.h; sourceTree = "<group>"; };
+		4DE67EA21F1C729A00D11BB0 /* ETLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETLocationManager.h; path = JB4A/ETLocationManager.h; sourceTree = "<group>"; };
+		4DE67EA31F1C729A00D11BB0 /* ETWKLandingPagePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETWKLandingPagePresenter.h; path = JB4A/ETWKLandingPagePresenter.h; sourceTree = "<group>"; };
+		4DE67EA41F1C729A00D11BB0 /* PushConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PushConstants.h; path = JB4A/PushConstants.h; sourceTree = "<group>"; };
+		4DE67EA51F1C729A00D11BB0 /* ETMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETMessage.h; path = JB4A/ETMessage.h; sourceTree = "<group>"; };
+		4DE67EA61F1C729A00D11BB0 /* ETGenericUpdate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETGenericUpdate.h; path = JB4A/ETGenericUpdate.h; sourceTree = "<group>"; };
+		4DE67EA71F1C729A00D11BB0 /* ETCloudPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETCloudPage.h; path = JB4A/ETCloudPage.h; sourceTree = "<group>"; };
+		4DE67EAA1F1C737000D11BB0 /* BDDataModel.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BDDataModel.bundle; sourceTree = "<group>"; };
+		4DE680441F1C737000D11BB0 /* BDAuthenticationState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDAuthenticationState.h; sourceTree = "<group>"; };
+		4DE680451F1C737000D11BB0 /* BDBeaconInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBeaconInfo.h; sourceTree = "<group>"; };
+		4DE680461F1C737000D11BB0 /* BDBoundingBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBoundingBox.h; sourceTree = "<group>"; };
+		4DE680471F1C737000D11BB0 /* BDCircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDCircle.h; sourceTree = "<group>"; };
+		4DE680481F1C737000D11BB0 /* BDFenceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFenceInfo.h; sourceTree = "<group>"; };
+		4DE680491F1C737000D11BB0 /* BDGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDGeometry.h; sourceTree = "<group>"; };
+		4DE6804A1F1C737000D11BB0 /* BDGeospatialUnits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDGeospatialUnits.h; sourceTree = "<group>"; };
+		4DE6804B1F1C737000D11BB0 /* BDLineString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDLineString.h; sourceTree = "<group>"; };
+		4DE6804C1F1C737000D11BB0 /* BDLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDLocation.h; sourceTree = "<group>"; };
+		4DE6804D1F1C737000D11BB0 /* BDLocationInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDLocationInfo.h; sourceTree = "<group>"; };
+		4DE6804E1F1C737000D11BB0 /* BDLocationManager+BDPointSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDLocationManager+BDPointSDK.h"; sourceTree = "<group>"; };
+		4DE6804F1F1C737000D11BB0 /* BDLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDLocationManager.h; sourceTree = "<group>"; };
+		4DE680501F1C737000D11BB0 /* BDPAuthenticationStateProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPAuthenticationStateProvider.h; sourceTree = "<group>"; };
+		4DE680511F1C737000D11BB0 /* BDPDeepCopy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPDeepCopy.h; sourceTree = "<group>"; };
+		4DE680521F1C737000D11BB0 /* BDPGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPGeometry.h; sourceTree = "<group>"; };
+		4DE680531F1C737000D11BB0 /* BDPLocationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPLocationDelegate.h; sourceTree = "<group>"; };
+		4DE680541F1C737000D11BB0 /* BDPMKShape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPMKShape.h; sourceTree = "<group>"; };
+		4DE680551F1C737000D11BB0 /* BDPNamedDescribed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPNamedDescribed.h; sourceTree = "<group>"; };
+		4DE680561F1C737000D11BB0 /* BDPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPoint.h; sourceTree = "<group>"; };
+		4DE680571F1C737000D11BB0 /* BDPointDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPointDelegate.h; sourceTree = "<group>"; };
+		4DE680581F1C737000D11BB0 /* BDPointOverlayRendererFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPointOverlayRendererFactory.h; sourceTree = "<group>"; };
+		4DE680591F1C737000D11BB0 /* BDPointSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPointSDK.h; sourceTree = "<group>"; };
+		4DE6805A1F1C737000D11BB0 /* BDPointSessionException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPointSessionException.h; sourceTree = "<group>"; };
+		4DE6805B1F1C737000D11BB0 /* BDPolygon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPolygon.h; sourceTree = "<group>"; };
+		4DE6805C1F1C737000D11BB0 /* BDPolygonal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPolygonal.h; sourceTree = "<group>"; };
+		4DE6805D1F1C737000D11BB0 /* BDPRestartAlertDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPRestartAlertDelegate.h; sourceTree = "<group>"; };
+		4DE6805E1F1C737000D11BB0 /* BDPSessionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPSessionDelegate.h; sourceTree = "<group>"; };
+		4DE6805F1F1C737000D11BB0 /* BDPSpatialObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPSpatialObject.h; sourceTree = "<group>"; };
+		4DE680601F1C737000D11BB0 /* BDPSpatialObjectInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPSpatialObjectInfo.h; sourceTree = "<group>"; };
+		4DE680611F1C737000D11BB0 /* BDPValidatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPValidatable.h; sourceTree = "<group>"; };
+		4DE680621F1C737000D11BB0 /* BDZoneInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDZoneInfo.h; sourceTree = "<group>"; };
+		4DE680631F1C737000D11BB0 /* MKMapView+BDPointSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKMapView+BDPointSDK.h"; sourceTree = "<group>"; };
+		4DE680641F1C737000D11BB0 /* NSString+BDURLEncoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BDURLEncoding.h"; sourceTree = "<group>"; };
+		4DE680651F1C737000D11BB0 /* libBDPointSDK-iphoneos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libBDPointSDK-iphoneos.a"; sourceTree = "<group>"; };
+		4DE680661F1C737000D11BB0 /* libBDPointSDK-iphonesimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libBDPointSDK-iphonesimulator.a"; sourceTree = "<group>"; };
+		4DE680671F1C737000D11BB0 /* Release Notes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Release Notes.txt"; sourceTree = "<group>"; };
+		4DE680681F1C737000D11BB0 /* Version.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Version.txt; sourceTree = "<group>"; };
 		9A3BF2261D6C14AE005C7458 /* BDPIntegrationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDPIntegrationManagerDelegate.h; path = Integration/BDPIntegrationManagerDelegate.h; sourceTree = "<group>"; };
-		9AAF656D1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BDSalesforceIntegrationWrapper.framework; sourceTree = "<group>"; };
 		9AC850A11D6BEED600217E69 /* BDSalesforceIntegrationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDSalesforceIntegrationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC850A51D6BEED600217E69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9AC850A71D6BEED600217E69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,7 +112,6 @@
 		9AC850B01D6BEED600217E69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AC850B31D6BEED600217E69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9AC850B51D6BEED600217E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9AC850BC1D6BEF1C00217E69 /* BDSalesforceIntegrationWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BDSalesforceIntegrationWrapper.framework; path = /Users/jasonxie/Documents/Bluedot/iOS/BDIntegrationWrapper/BDSalesforceIntegrationSample/BDSalesforceIntegrationWrapper.framework; sourceTree = "<absolute>"; };
 		9AC850D81D6C04F400217E69 /* BDAuthenticateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDAuthenticateData.h; path = Integration/BDAuthenticateData.h; sourceTree = "<group>"; };
 		9AC850D91D6C04F400217E69 /* BDAuthenticateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDAuthenticateData.m; path = Integration/BDAuthenticateData.m; sourceTree = "<group>"; };
 		9AC850DA1D6C04F400217E69 /* BDIntegrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDIntegrationManager.h; path = Integration/BDIntegrationManager.h; sourceTree = "<group>"; };
@@ -80,13 +134,11 @@
 			files = (
 				9AC850F01D6C06B200217E69 /* UIKit.framework in Frameworks */,
 				9AC850EE1D6C06AC00217E69 /* SystemConfiguration.framework in Frameworks */,
-				9AAF656E1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework in Frameworks */,
-				9A3BF21D1D6C0E38005C7458 /* BDSalesforceIntegrationWrapper.framework in Frameworks */,
 				9AC850EC1D6C06A000217E69 /* MapKit.framework in Frameworks */,
-				9AAF656F1D795834002D4B2B /* BDSalesforceIntegrationWrapper.framework in Frameworks */,
 				9AC850EA1D6C069500217E69 /* CoreMotion.framework in Frameworks */,
 				9AC850E81D6C068B00217E69 /* CoreLocation.framework in Frameworks */,
 				9AC850E61D6C068200217E69 /* CoreGraphics.framework in Frameworks */,
+				4DE6806A1F1C738500D11BB0 /* libJB4ASDK-4.8.0.20700001.a in Frameworks */,
 				9AC850E41D6C067B00217E69 /* AVFoundation.framework in Frameworks */,
 				9AC850E21D6C067400217E69 /* AudioToolbox.framework in Frameworks */,
 				9AC850E01D6C065900217E69 /* WebKit.framework in Frameworks */,
@@ -96,14 +148,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DE67E951F1C71E300D11BB0 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		4DE67EA91F1C737000D11BB0 /* PointSDK */ = {
+			isa = PBXGroup;
+			children = (
+				4DE67EAA1F1C737000D11BB0 /* BDDataModel.bundle */,
+				4DE680431F1C737000D11BB0 /* include */,
+				4DE680651F1C737000D11BB0 /* libBDPointSDK-iphoneos.a */,
+				4DE680661F1C737000D11BB0 /* libBDPointSDK-iphonesimulator.a */,
+				4DE680671F1C737000D11BB0 /* Release Notes.txt */,
+				4DE680681F1C737000D11BB0 /* Version.txt */,
+			);
+			path = PointSDK;
+			sourceTree = "<group>";
+		};
+		4DE680431F1C737000D11BB0 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				4DE680441F1C737000D11BB0 /* BDAuthenticationState.h */,
+				4DE680451F1C737000D11BB0 /* BDBeaconInfo.h */,
+				4DE680461F1C737000D11BB0 /* BDBoundingBox.h */,
+				4DE680471F1C737000D11BB0 /* BDCircle.h */,
+				4DE680481F1C737000D11BB0 /* BDFenceInfo.h */,
+				4DE680491F1C737000D11BB0 /* BDGeometry.h */,
+				4DE6804A1F1C737000D11BB0 /* BDGeospatialUnits.h */,
+				4DE6804B1F1C737000D11BB0 /* BDLineString.h */,
+				4DE6804C1F1C737000D11BB0 /* BDLocation.h */,
+				4DE6804D1F1C737000D11BB0 /* BDLocationInfo.h */,
+				4DE6804E1F1C737000D11BB0 /* BDLocationManager+BDPointSDK.h */,
+				4DE6804F1F1C737000D11BB0 /* BDLocationManager.h */,
+				4DE680501F1C737000D11BB0 /* BDPAuthenticationStateProvider.h */,
+				4DE680511F1C737000D11BB0 /* BDPDeepCopy.h */,
+				4DE680521F1C737000D11BB0 /* BDPGeometry.h */,
+				4DE680531F1C737000D11BB0 /* BDPLocationDelegate.h */,
+				4DE680541F1C737000D11BB0 /* BDPMKShape.h */,
+				4DE680551F1C737000D11BB0 /* BDPNamedDescribed.h */,
+				4DE680561F1C737000D11BB0 /* BDPoint.h */,
+				4DE680571F1C737000D11BB0 /* BDPointDelegate.h */,
+				4DE680581F1C737000D11BB0 /* BDPointOverlayRendererFactory.h */,
+				4DE680591F1C737000D11BB0 /* BDPointSDK.h */,
+				4DE6805A1F1C737000D11BB0 /* BDPointSessionException.h */,
+				4DE6805B1F1C737000D11BB0 /* BDPolygon.h */,
+				4DE6805C1F1C737000D11BB0 /* BDPolygonal.h */,
+				4DE6805D1F1C737000D11BB0 /* BDPRestartAlertDelegate.h */,
+				4DE6805E1F1C737000D11BB0 /* BDPSessionDelegate.h */,
+				4DE6805F1F1C737000D11BB0 /* BDPSpatialObject.h */,
+				4DE680601F1C737000D11BB0 /* BDPSpatialObjectInfo.h */,
+				4DE680611F1C737000D11BB0 /* BDPValidatable.h */,
+				4DE680621F1C737000D11BB0 /* BDZoneInfo.h */,
+				4DE680631F1C737000D11BB0 /* MKMapView+BDPointSDK.h */,
+				4DE680641F1C737000D11BB0 /* NSString+BDURLEncoding.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		9AC850981D6BEED600217E69 = {
 			isa = PBXGroup;
 			children = (
+				4D418F641F1C924F00A1195F /* BDSalesforceIntegrationWrapper.framework */,
+				4DE67EA91F1C737000D11BB0 /* PointSDK */,
 				9AC850BF1D6BFB7500217E69 /* JB4A */,
-				9AC850BE1D6BFB6400217E69 /* PointSDK */,
 				9AC850A31D6BEED600217E69 /* BDSalesforceIntegrationSample */,
 				9AC850BB1D6BEEE600217E69 /* Frameworks */,
 				9AC850A21D6BEED600217E69 /* Products */,
+				4DE67E951F1C71E300D11BB0 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,7 +257,6 @@
 		9AC850BB1D6BEEE600217E69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9AAF656D1D79582C002D4B2B /* BDSalesforceIntegrationWrapper.framework */,
 				9AC850EF1D6C06B200217E69 /* UIKit.framework */,
 				9AC850ED1D6C06AC00217E69 /* SystemConfiguration.framework */,
 				9AC850EB1D6C06A000217E69 /* MapKit.framework */,
@@ -157,17 +270,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9AC850BE1D6BFB6400217E69 /* PointSDK */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = PointSDK;
-			path = BDSalesforceIntegrationSample;
-			sourceTree = "<group>";
-		};
 		9AC850BF1D6BFB7500217E69 /* JB4A */ = {
 			isa = PBXGroup;
 			children = (
+				4DE67EA01F1C729A00D11BB0 /* ETAnalytics.h */,
+				4DE67EA71F1C729A00D11BB0 /* ETCloudPage.h */,
+				4DE67E9C1F1C729900D11BB0 /* ETCloudPageDataSource.h */,
+				4DE67E971F1C729800D11BB0 /* ETEventMessage.h */,
+				4DE67E9D1F1C729A00D11BB0 /* ETEventRegion.h */,
+				4DE67EA61F1C729A00D11BB0 /* ETGenericUpdate.h */,
+				4DE67EA11F1C729A00D11BB0 /* ETLandingPagePresenter.h */,
+				4DE67EA21F1C729A00D11BB0 /* ETLocationManager.h */,
+				4DE67EA51F1C729A00D11BB0 /* ETMessage.h */,
+				4DE67E9B1F1C729900D11BB0 /* ETPush.h */,
+				4DE67E9E1F1C729A00D11BB0 /* ETRegion.h */,
+				4DE67EA31F1C729A00D11BB0 /* ETWKLandingPagePresenter.h */,
+				4DE67E9A1F1C729900D11BB0 /* ExactTargetEnhancedPushDataSource.h */,
+				4DE67E981F1C729900D11BB0 /* libJB4ASDK-4.8.0.20700001.a */,
+				4DE67E961F1C729800D11BB0 /* PICart.h */,
+				4DE67E991F1C729900D11BB0 /* PICartItem.h */,
+				4DE67E9F1F1C729A00D11BB0 /* PIOrder.h */,
+				4DE67EA41F1C729A00D11BB0 /* PushConstants.h */,
 			);
 			name = JB4A;
 			sourceTree = "<group>";
@@ -216,6 +339,7 @@
 				TargetAttributes = {
 					9AC850A01D6BEED600217E69 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9H7C75E224;
 					};
 				};
 			};
@@ -243,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AC850B41D6BEED600217E69 /* LaunchScreen.storyboard in Resources */,
+				4DE680691F1C737700D11BB0 /* BDDataModel.bundle in Resources */,
 				9AC850B11D6BEED600217E69 /* Assets.xcassets in Resources */,
 				9AC850AF1D6BEED600217E69 /* Main.storyboard in Resources */,
 			);
@@ -378,6 +503,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9H7C75E224;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,6 +535,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9H7C75E224;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

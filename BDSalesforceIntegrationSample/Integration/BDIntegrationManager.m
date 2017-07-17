@@ -111,48 +111,75 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
 #endif
 }
 
-- (void)reportCheckInWithZoneId:(NSString *)zoneId
-{
-    BDAuthenticateData *authenticateData = BDAuthenticateData.authenticateData;
-    
-    [[BDZoneEventReporter sharedInstance] reportCheckInWithSalesforceSubscriberKey:[[ETPush pushManager] getSubscriberKey]
-                                                                            zoneId:zoneId
-                                                                            apiKey:authenticateData.pointApiKey
-                                                                       packageName:authenticateData.pointPackageName
-                                                                          username:authenticateData.pointUsername];
-}
-
-- (void)reportCheckOutWithZoneId:(NSString *)zoneId
-{
-    BDAuthenticateData *authenticateData = BDAuthenticateData.authenticateData;
-    
-    [[BDZoneEventReporter sharedInstance] reportCheckOutWithSalesforceSubscriberKey:[[ETPush pushManager] getSubscriberKey]
-                                                                             zoneId:zoneId
-                                                                             apiKey:authenticateData.pointApiKey
-                                                                        packageName:authenticateData.pointPackageName
-                                                                           username:authenticateData.pointUsername];
-}
-
 #pragma mark BDPLocationDelegate
+- (NSString *)get8601formattedDate
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+    
+    NSDate *now = [NSDate date];
+    NSString *iso8601String = [dateFormatter stringFromDate:now];
+    
+    return iso8601String;
+}
 
 - (void)didCheckIntoFence:(BDFenceInfo *)fence
                    inZone:(BDZoneInfo *)zoneInfo
-             atCoordinate:(BDLocationCoordinate2D)coordinate
-                   onDate:(NSDate *)date
+              atLocation: (BDLocationInfo *)location
              willCheckOut:(BOOL)willCheckOut
            withCustomData:(NSDictionary *)customData
 {
-    [ self reportCheckInWithZoneId:zoneInfo.ID ];
+    BDAuthenticateData *authenticateData = BDAuthenticateData.authenticateData;
+    
+    BDZoneEvent *zoneEvent = [BDZoneEvent build:^(id<BDZoneEventBuilder> builder) {
+        [builder setSalesforceSubscriberKey:[[ETPush pushManager] getSubscriberKey]];
+        [builder setApiKey:authenticateData.pointApiKey];
+        [builder setZoneId:zoneInfo.ID];
+        [builder setZoneName:zoneInfo.name];
+        [builder setPackageName:authenticateData.pointPackageName];
+        [builder setUserName:authenticateData.pointUsername];
+        [builder setFenceId:fence.ID];
+        [builder setFenceName:fence.name];
+        [builder setCheckInTime:[self get8601formattedDate]];
+        [builder setCheckInLatitude:[NSNumber numberWithDouble:location.latitude]];
+        [builder setCheckInLongitude:[NSNumber numberWithDouble:location.longitude]];
+        [builder setCheckInBearing:[NSNumber numberWithDouble:location.bearing]];
+        [builder setCheckInSpeed:[NSNumber numberWithDouble:location.speed]];
+        [builder setCustomData:customData];
+    }];
+    
+    [[BDZoneEventReporter sharedInstance] reportCheckInWithBDZoneEvent: zoneEvent];
 }
 
 - (void)didCheckIntoBeacon:(BDBeaconInfo *)beacon
                     inZone:(BDZoneInfo *)zoneInfo
-             withProximity:(CLProximity)proximity
-                    onDate:(NSDate *)date
-              willCheckOut:(BOOL)willCheckOut
-            withCustomData:(NSDictionary *)customData
+                atLocation: (BDLocationInfo *)locationInfo
+             withProximity: (CLProximity)proximity
+              willCheckOut: (BOOL)willCheckOut
+            withCustomData: (NSDictionary *)customData
 {
-    [ self reportCheckInWithZoneId:zoneInfo.ID ];
+    BDAuthenticateData *authenticateData = BDAuthenticateData.authenticateData;
+    
+    BDZoneEvent *zoneEvent = [BDZoneEvent build:^(id<BDZoneEventBuilder> builder) {
+        [builder setSalesforceSubscriberKey:[[ETPush pushManager] getSubscriberKey]];
+        [builder setApiKey:authenticateData.pointApiKey];
+        [builder setZoneId:zoneInfo.ID];
+        [builder setZoneName:zoneInfo.name];
+        [builder setPackageName:authenticateData.pointPackageName];
+        [builder setUserName:authenticateData.pointUsername];
+        [builder setBeaconId:beacon.ID];
+        [builder setBeaconName:beacon.name];
+        [builder setCheckInTime:[self get8601formattedDate]];
+        [builder setCheckInLatitude:[NSNumber numberWithDouble:locationInfo.latitude]];
+        [builder setCheckInLongitude:[NSNumber numberWithDouble:locationInfo.longitude]];
+        [builder setCheckInBearing:[NSNumber numberWithDouble:locationInfo.bearing]];
+        [builder setCheckInSpeed:[NSNumber numberWithDouble:locationInfo.speed]];
+        [builder setCustomData:customData];
+    }];
+    
+    [[BDZoneEventReporter sharedInstance] reportCheckInWithBDZoneEvent: zoneEvent];
 }
 
 - (void)didCheckOutFromFence:(BDFenceInfo *)fence
@@ -161,7 +188,23 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
                 withDuration:(NSUInteger)checkedInDuration
               withCustomData:(NSDictionary *)customData
 {
-    [self reportCheckOutWithZoneId:zoneInfo.ID];
+    BDAuthenticateData *authenticateData = BDAuthenticateData.authenticateData;
+    
+    BDZoneEvent *zoneEvent = [BDZoneEvent build:^(id<BDZoneEventBuilder> builder) {
+        [builder setSalesforceSubscriberKey:[[ETPush pushManager] getSubscriberKey]];
+        [builder setApiKey:authenticateData.pointApiKey];
+        [builder setZoneId:zoneInfo.ID];
+        [builder setZoneName:zoneInfo.name];
+        [builder setPackageName:authenticateData.pointPackageName];
+        [builder setUserName:authenticateData.pointUsername];
+        [builder setFenceId:fence.ID];
+        [builder setFenceName:fence.name];
+        [builder setCheckOutTime:[self get8601formattedDate]];
+        [builder setDwellTime:[NSNumber numberWithInt:checkedInDuration]];
+        [builder setCustomData:customData];
+    }];
+    
+    [[BDZoneEventReporter sharedInstance] reportCheckOutWithBDZoneEvent: zoneEvent];
 }
 
 - (void)didCheckOutFromBeacon:(BDBeaconInfo *)beacon
@@ -171,7 +214,22 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
                  withDuration:(NSUInteger)checkedInDuration
                withCustomData:(NSDictionary *)customData
 {
-    [self reportCheckOutWithZoneId:zoneInfo.ID];
+    BDAuthenticateData *authenticateData = BDAuthenticateData.authenticateData;
+    
+    BDZoneEvent *zoneEvent = [BDZoneEvent build:^(id<BDZoneEventBuilder> builder) {
+        [builder setSalesforceSubscriberKey:[[ETPush pushManager] getSubscriberKey]];
+        [builder setApiKey:authenticateData.pointApiKey];
+        [builder setZoneId:zoneInfo.ID];
+        [builder setZoneName:zoneInfo.name];
+        [builder setPackageName:authenticateData.pointPackageName];
+        [builder setUserName:authenticateData.pointUsername];
+        [builder setBeaconId:beacon.ID];
+        [builder setBeaconName:beacon.name];
+        [builder setCheckOutTime:[self get8601formattedDate]];
+        [builder setDwellTime:[NSNumber numberWithInt:checkedInDuration]];
+        [builder setCustomData:customData];
+    }];
+    [[BDZoneEventReporter sharedInstance] reportCheckOutWithBDZoneEvent: zoneEvent];
 }
 
 #pragma mark BDPSessionDelegate
