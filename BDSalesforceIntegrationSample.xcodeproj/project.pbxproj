@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D418F651F1C924F00A1195F /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D418F641F1C924F00A1195F /* BDSalesforceIntegrationWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4D72538B1F1C9D0C003A0914 /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D72538A1F1C9D0C003A0914 /* BDSalesforceIntegrationWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4DE680691F1C737700D11BB0 /* BDDataModel.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4DE67EAA1F1C737000D11BB0 /* BDDataModel.bundle */; };
 		4DE6806A1F1C738500D11BB0 /* libJB4ASDK-4.8.0.20700001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE67E981F1C729900D11BB0 /* libJB4ASDK-4.8.0.20700001.a */; };
 		9AC850A61D6BEED600217E69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850A51D6BEED600217E69 /* main.m */; };
@@ -32,11 +32,11 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		9A3BF21F1D6C0E39005C7458 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4D418F651F1C924F00A1195F /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */,
+				4D72538B1F1C9D0C003A0914 /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,7 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4D418F641F1C924F00A1195F /* BDSalesforceIntegrationWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BDSalesforceIntegrationWrapper.framework; path = ../ios_release/BDSalesforceIntegrationWrapper.framework; sourceTree = "<group>"; };
+		4D72538A1F1C9D0C003A0914 /* BDSalesforceIntegrationWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BDSalesforceIntegrationWrapper.framework; path = ../ios_release/BDSalesforceIntegrationWrapper.framework; sourceTree = "<group>"; };
 		4DE67E961F1C729800D11BB0 /* PICart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PICart.h; path = JB4A/PICart.h; sourceTree = "<group>"; };
 		4DE67E971F1C729800D11BB0 /* ETEventMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ETEventMessage.h; path = JB4A/ETEventMessage.h; sourceTree = "<group>"; };
 		4DE67E981F1C729900D11BB0 /* libJB4ASDK-4.8.0.20700001.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libJB4ASDK-4.8.0.20700001.a"; path = "JB4A/libJB4ASDK-4.8.0.20700001.a"; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		9AC850981D6BEED600217E69 = {
 			isa = PBXGroup;
 			children = (
-				4D418F641F1C924F00A1195F /* BDSalesforceIntegrationWrapper.framework */,
+				4D72538A1F1C9D0C003A0914 /* BDSalesforceIntegrationWrapper.framework */,
 				4DE67EA91F1C737000D11BB0 /* PointSDK */,
 				9AC850BF1D6BFB7500217E69 /* JB4A */,
 				9AC850A31D6BEED600217E69 /* BDSalesforceIntegrationSample */,
