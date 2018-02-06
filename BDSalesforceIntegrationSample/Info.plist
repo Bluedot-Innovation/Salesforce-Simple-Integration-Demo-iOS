@@ -63,5 +63,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow this so that we can trigger geofences in the background.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow this so that we can trigger geofences in the background.</string>
 </dict>
 </plist>

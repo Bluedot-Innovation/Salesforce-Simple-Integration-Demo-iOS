@@ -83,7 +83,9 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
             [ _delegate configureETPushSuccessful ];
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSString * subscriberKey = [[ETPush pushManager] getSubscriberKey] ?: [userDefaults stringForKey:subscriberKeyUserDefaultsKey];
+        NSString * etPushSubscriberKey = [[ETPush pushManager] getSubscriberKey];
+        NSString * userDefaultSubscriberKey =  [userDefaults stringForKey:subscriberKeyUserDefaultsKey];
+        NSString * subscriberKey = etPushSubscriberKey ?: userDefaultSubscriberKey;
         
         if ( subscriberKey == nil )
         {
@@ -93,7 +95,13 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
             [[ETPush pushManager] updateET];
         }
         
-        NSLog(@"SubscriberKey: %@", subscriberKey);
+        if (etPushSubscriberKey == nil && userDefaultSubscriberKey != nil) {
+
+            [[ETPush pushManager] setSubscriberKey:userDefaultSubscriberKey];
+            [[ETPush pushManager] updateET];
+        }
+        
+        NSLog(@"SubscriberKey: %@", [userDefaults stringForKey:subscriberKeyUserDefaultsKey]);
     }
 }
 
