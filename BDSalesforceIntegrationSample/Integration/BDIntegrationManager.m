@@ -6,9 +6,9 @@
 //  Copyright © 2016 Bluedot Innovation. All rights reserved.
 //
 
+@import BDPointSDK;
 #import <Foundation/Foundation.h>
 #import <BDSalesforceIntegrationWrapper/BDZoneEventReporter.h>
-#import <BDPointSDK.h>
 #import "BDIntegrationManager.h"
 #import "BDAuthenticateData.h"
 #import "ETPush.h"

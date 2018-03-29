@@ -109,7 +109,7 @@
          Received a remote notification...
          Clear the badge
          */
-        [[ETPush pushManager] resetBadgeCount];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     }
     
     handler(UIBackgroundFetchResultNoData);

@@ -32,7 +32,11 @@
 	<string>4891261a-8e7e-4034-ab1f-2fd3465ff14f</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow this so that we can trigger geofences in the background.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow this so that we can trigger geofences in the background.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow this so that we can trigger geofences in the background.</string>
 	<key>UIBackgroundModes</key>
 	<array>
@@ -63,9 +67,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Allow this so that we can trigger geofences in the background.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Allow this so that we can trigger geofences in the background.</string>
 </dict>
 </plist>

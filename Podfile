@@ -1,6 +1,6 @@
 target 'BDSalesforceIntegrationSample' do
 
-pod 'PointSDK-Cocoapods-iOS'
-pod 'JB4ASDK'
+  pod 'JB4ASDK'
+  pod 'BluedotPointSDK'
 
 end

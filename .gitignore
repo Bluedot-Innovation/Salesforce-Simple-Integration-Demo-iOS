@@ -1,0 +1,5 @@
+*.xcuserstate
+xcuserdata
+BDPointSDK.framework
+Pods
+*.xcworkspacedata
