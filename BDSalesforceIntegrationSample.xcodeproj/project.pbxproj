@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40D0387156D94526ED399CCA /* libPods-BDSalesforceIntegrationSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F53D4DA4A0B4427F1818CBA /* libPods-BDSalesforceIntegrationSample.a */; };
+		78254D3420F48F500017E806 /* libJB4ASDK-4.9.7.21010001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78254D3220F48C4B0017E806 /* libJB4ASDK-4.9.7.21010001.a */; };
+		78D7E64B20F585FC0041FDAD /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D7E64A20F585FC0041FDAD /* Dummy.swift */; };
 		78FD6D77206C840B0031A0DF /* BDSalesforceIntegrationWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78FD6D76206C840A0031A0DF /* BDSalesforceIntegrationWrapper.framework */; };
 		78FD6D78206C840B0031A0DF /* BDSalesforceIntegrationWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78FD6D76206C840A0031A0DF /* BDSalesforceIntegrationWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		78FD6D7F206C87960031A0DF /* libJB4ASDK-4.9.6.21000000.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78FD6D7E206C87960031A0DF /* libJB4ASDK-4.9.6.21000000.a */; };
 		9AC850A61D6BEED600217E69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850A51D6BEED600217E69 /* main.m */; };
 		9AC850A91D6BEED600217E69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850A81D6BEED600217E69 /* AppDelegate.m */; };
 		9AC850AC1D6BEED600217E69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC850AB1D6BEED600217E69 /* ViewController.m */; };
@@ -45,9 +47,11 @@
 
 /* Begin PBXFileReference section */
 		106EDC2F4595526982443CD7 /* Pods-BDSalesforceIntegrationSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDSalesforceIntegrationSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BDSalesforceIntegrationSample/Pods-BDSalesforceIntegrationSample.debug.xcconfig"; sourceTree = "<group>"; };
+		2F53D4DA4A0B4427F1818CBA /* libPods-BDSalesforceIntegrationSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDSalesforceIntegrationSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE872D5F2835BF4FC09CCFF /* Pods-BDSalesforceIntegrationSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDSalesforceIntegrationSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDSalesforceIntegrationSample/Pods-BDSalesforceIntegrationSample.release.xcconfig"; sourceTree = "<group>"; };
+		78254D3220F48C4B0017E806 /* libJB4ASDK-4.9.7.21010001.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libJB4ASDK-4.9.7.21010001.a"; path = "Pods/JB4ASDK/JB4A-SDK/libJB4ASDK-4.9.7.21010001.a"; sourceTree = "<group>"; };
+		78D7E64A20F585FC0041FDAD /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dummy.swift; path = ../Dummy.swift; sourceTree = "<group>"; };
 		78FD6D76206C840A0031A0DF /* BDSalesforceIntegrationWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BDSalesforceIntegrationWrapper.framework; sourceTree = "<group>"; };
-		78FD6D7E206C87960031A0DF /* libJB4ASDK-4.9.6.21000000.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libJB4ASDK-4.9.6.21000000.a"; path = "Pods/JB4ASDK/JB4A-SDK/libJB4ASDK-4.9.6.21000000.a"; sourceTree = "<group>"; };
 		9A3BF2261D6C14AE005C7458 /* BDPIntegrationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDPIntegrationManagerDelegate.h; path = Integration/BDPIntegrationManagerDelegate.h; sourceTree = "<group>"; };
 		9AC850A11D6BEED600217E69 /* BDSalesforceIntegrationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDSalesforceIntegrationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC850A51D6BEED600217E69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78FD6D7F206C87960031A0DF /* libJB4ASDK-4.9.6.21000000.a in Frameworks */,
+				78254D3420F48F500017E806 /* libJB4ASDK-4.9.7.21010001.a in Frameworks */,
 				9AC850F01D6C06B200217E69 /* UIKit.framework in Frameworks */,
 				9AC850EE1D6C06AC00217E69 /* SystemConfiguration.framework in Frameworks */,
 				9AC850EC1D6C06A000217E69 /* MapKit.framework in Frameworks */,
@@ -90,6 +94,7 @@
 				9AC850E41D6C067B00217E69 /* AVFoundation.framework in Frameworks */,
 				9AC850E21D6C067400217E69 /* AudioToolbox.framework in Frameworks */,
 				9AC850E01D6C065900217E69 /* WebKit.framework in Frameworks */,
+				40D0387156D94526ED399CCA /* libPods-BDSalesforceIntegrationSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +148,7 @@
 		9AC850A41D6BEED600217E69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				78D7E64A20F585FC0041FDAD /* Dummy.swift */,
 				9AC850A51D6BEED600217E69 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -151,7 +157,7 @@
 		9AC850BB1D6BEEE600217E69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78FD6D7E206C87960031A0DF /* libJB4ASDK-4.9.6.21000000.a */,
+				78254D3220F48C4B0017E806 /* libJB4ASDK-4.9.7.21010001.a */,
 				9AC850EF1D6C06B200217E69 /* UIKit.framework */,
 				9AC850ED1D6C06AC00217E69 /* SystemConfiguration.framework */,
 				9AC850EB1D6C06A000217E69 /* MapKit.framework */,
@@ -161,6 +167,7 @@
 				9AC850E31D6C067B00217E69 /* AVFoundation.framework */,
 				9AC850E11D6C067400217E69 /* AudioToolbox.framework */,
 				9AC850DF1D6C065900217E69 /* WebKit.framework */,
+				2F53D4DA4A0B4427F1818CBA /* libPods-BDSalesforceIntegrationSample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -223,6 +230,7 @@
 					9AC850A01D6BEED600217E69 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 9H7C75E224;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -335,6 +343,7 @@
 				9AC850A91D6BEED600217E69 /* AppDelegate.m in Sources */,
 				9AC850DE1D6C04F400217E69 /* BDIntegrationManager.m in Sources */,
 				9AC850DD1D6C04F400217E69 /* BDAuthenticateData.m in Sources */,
+				78D7E64B20F585FC0041FDAD /* Dummy.swift in Sources */,
 				9AC850A61D6BEED600217E69 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +466,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -465,7 +475,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BDSalesforceIntegrationSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -488,6 +498,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -496,7 +507,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BDSalesforceIntegrationSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

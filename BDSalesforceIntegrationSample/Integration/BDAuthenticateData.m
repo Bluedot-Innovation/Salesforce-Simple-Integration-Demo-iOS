@@ -13,8 +13,10 @@ static NSString *kBDPointApiKey = @"BDPointApiKey";
 static NSString *kBDPointPackageName = @"BDPointPackageName";
 static NSString *kBDPointUsername = @"BDPointUsername";
 
-static NSString *kETDebugAppID = @"ETDebugAppID";
-static NSString *kETDebugAccessToken = @"ETDebugAccessToken";
+// Uncomment to test in Debug mode
+//static NSString *kETDebugAppID = @"ETDebugAppID";
+//static NSString *kETDebugAccessToken = @"ETDebugAccessToken";
+
 static NSString *kETProdAppID = @"ETProdAppID";
 static NSString *kETProdAccessToken = @"ETProdAccessToken";
 
@@ -47,13 +49,14 @@ static NSString *kETProdAccessToken = @"ETProdAccessToken";
             shareInstance.pointPackageName = [ mainBundle objectForInfoDictionaryKey:kBDPointPackageName ];
             shareInstance.pointUsername = [ mainBundle objectForInfoDictionaryKey:kBDPointUsername ];
 
-#ifdef DEBUG
-            shareInstance.etAppID = [mainBundle objectForInfoDictionaryKey:kETDebugAppID];
-            shareInstance.etAccessToken = [mainBundle objectForInfoDictionaryKey:kETDebugAccessToken];
-#else
+// Uncomment to test in Debug mode
+//#ifdef DEBUG
+//            shareInstance.etAppID = [mainBundle objectForInfoDictionaryKey:kETDebugAppID];
+//            shareInstance.etAccessToken = [mainBundle objectForInfoDictionaryKey:kETDebugAccessToken];
+//#else
             shareInstance.etAppID = [mainBundle objectForInfoDictionaryKey:kETProdAppID];
             shareInstance.etAccessToken = [mainBundle objectForInfoDictionaryKey:kETProdAccessToken];
-#endif
+//#endif
         };
         
         if( NSThread.currentThread.isMainThread )
