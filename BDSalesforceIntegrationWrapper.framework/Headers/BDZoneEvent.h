@@ -12,11 +12,11 @@
 @required
 - (void)setSalesforceSubscriberKey:(NSString *)salesforceSubscriberKey;
 - (void)setApiKey:(NSString *)apiKey;
-- (void)setPackageName:(NSString *)packageName;
-- (void)setUserName:(NSString *)userName;
 - (void)setZoneId:(NSString *)zoneId;
 
 @optional
+- (void)setPackageName:(NSString *)packageName;
+- (void)setUserName:(NSString *)userName;
 - (void)setZoneName:(NSString *)zoneName;
 - (void)setFenceId:(NSString *)fenceId;
 - (void)setFenceName:(NSString *)fenceName;

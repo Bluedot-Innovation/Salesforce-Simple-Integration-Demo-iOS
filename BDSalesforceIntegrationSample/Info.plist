@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>BDPointApiKey</key>
-	<string>fd32cbb0-6762-11e7-972c-06a56cd124c5</string>
+	<string></string>
 	<key>BDPointPackageName</key>
-	<string>com.bluedotinnovation.bluedot</string>
+	<string></string>
 	<key>BDPointUsername</key>
-	<string>balendran@bluedotinnovation.com</string>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -27,9 +27,13 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>ETDebugAccessToken</key>
-	<string>vquqgkyc27zbw7j9ws3m8wbu</string>
+	<string></string>
 	<key>ETDebugAppID</key>
-	<string>4891261a-8e7e-4034-ab1f-2fd3465ff14f</string>
+	<string></string>
+	<key>ETProdAccessToken</key>
+	<string></string>
+	<key>ETProdAppID</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

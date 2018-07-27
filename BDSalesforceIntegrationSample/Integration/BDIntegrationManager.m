@@ -107,9 +107,7 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
 
 - (void)authenticateBDPoint
 {
-    [BDLocationManager.instance authenticateWithApiKey:_authenticateData.pointApiKey
-                                           packageName:_authenticateData.pointPackageName
-                                              username:_authenticateData.pointUsername];
+    [BDLocationManager.instance authenticateWithApiKey:_authenticateData.pointApiKey];
 }
 
 #pragma mark BDPLocationDelegate
@@ -139,8 +137,6 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
         [builder setApiKey:authenticateData.pointApiKey];
         [builder setZoneId:zoneInfo.ID];
         [builder setZoneName:zoneInfo.name];
-        [builder setPackageName:authenticateData.pointPackageName];
-        [builder setUserName:authenticateData.pointUsername];
         [builder setFenceId:fence.ID];
         [builder setFenceName:fence.name];
         [builder setCheckInTime:[self get8601formattedDate]];
@@ -168,8 +164,6 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
         [builder setApiKey:authenticateData.pointApiKey];
         [builder setZoneId:zoneInfo.ID];
         [builder setZoneName:zoneInfo.name];
-        [builder setPackageName:authenticateData.pointPackageName];
-        [builder setUserName:authenticateData.pointUsername];
         [builder setBeaconId:beacon.ID];
         [builder setBeaconName:beacon.name];
         [builder setCheckInTime:[self get8601formattedDate]];
@@ -196,8 +190,6 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
         [builder setApiKey:authenticateData.pointApiKey];
         [builder setZoneId:zoneInfo.ID];
         [builder setZoneName:zoneInfo.name];
-        [builder setPackageName:authenticateData.pointPackageName];
-        [builder setUserName:authenticateData.pointUsername];
         [builder setFenceId:fence.ID];
         [builder setFenceName:fence.name];
         [builder setCheckOutTime:[self get8601formattedDate]];
@@ -222,8 +214,6 @@ static NSString *subscriberKeyUserDefaultsKey = @"SubcriberKeyUserDefaultsKey";
         [builder setApiKey:authenticateData.pointApiKey];
         [builder setZoneId:zoneInfo.ID];
         [builder setZoneName:zoneInfo.name];
-        [builder setPackageName:authenticateData.pointPackageName];
-        [builder setUserName:authenticateData.pointUsername];
         [builder setBeaconId:beacon.ID];
         [builder setBeaconName:beacon.name];
         [builder setCheckOutTime:[self get8601formattedDate]];
