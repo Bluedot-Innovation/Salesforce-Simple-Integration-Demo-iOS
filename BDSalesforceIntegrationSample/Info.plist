@@ -3,11 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BDPointApiKey</key>
-	<string></string>
-	<key>BDPointPackageName</key>
-	<string></string>
-	<key>BDPointUsername</key>
-	<string></string>
+	<string>&lt;your PointSDK API key&gt;</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -26,14 +22,6 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>ETDebugAccessToken</key>
-	<string></string>
-	<key>ETDebugAppID</key>
-	<string></string>
-	<key>ETProdAccessToken</key>
-	<string></string>
-	<key>ETProdAppID</key>
-	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

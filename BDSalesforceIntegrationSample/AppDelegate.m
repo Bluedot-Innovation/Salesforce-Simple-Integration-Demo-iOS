@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "ETPush.h"
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @end
 
@@ -18,16 +18,32 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
-    
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
-                                            UIUserNotificationTypeBadge |
-                                            UIUserNotificationTypeSound |
-                                            UIUserNotificationTypeAlert
-                                                                             categories:nil];
-    // Notify the SDK what user notification settings have been selected
-    [[ETPush pushManager] registerUserNotificationSettings:settings];
-    [[ETPush pushManager] registerForRemoteNotifications];
+    if (@available(iOS 10, *)) {
+        // set the UNUserNotificationCenter delegate - the delegate must be set here in didFinishLaunchingWithOptions
+        [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+        
+        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge
+                                                                            completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                                                                if (error == nil) {
+                                                                                    if (granted == YES) {
+                                                                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                            [[UIApplication sharedApplication] registerForRemoteNotifications];
+                                                                                        });
+                                                                                    }
+                                                                                }
+                                                                            }];
+    }
+    else {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 100000
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
+                                                UIUserNotificationTypeBadge |
+                                                UIUserNotificationTypeSound |
+                                                UIUserNotificationTypeAlert
+                                                                                 categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+#endif
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
     
     return YES;
 }
@@ -54,65 +70,40 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-    /**
-     Inform the JB4ASDK of the requested notification settings
-     */
-    [[ETPush pushManager] didRegisterUserNotificationSettings:notificationSettings];
-}
-
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     /**
-     Inform the JB4ASDK of the device token
+     Inform the MarketingCloudSDK of the device token
      */
-    [[ETPush pushManager] registerDeviceToken:deviceToken];
+    [[MarketingCloudSDK sharedInstance] sfmc_setDeviceToken:deviceToken];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     /**
-     Inform the JB4ASDK that the device failed to register and did not receive a device token
+     Inform the MarketingCloudSDK that the device failed to register and did not receive a device token
      */
-    [[ETPush pushManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
+    os_log_debug(OS_LOG_DEFAULT, "didFailToRegisterForRemoteNotificationsWithError = %@", error);
 }
 
--(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    /**
-     Inform the JB4ASDK that the device received a local notification
-     */
-    NSLog(@"Local Notification Receieved");
-    [[ETPush pushManager] handleLocalNotification:notification];
-}
-
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    NSLog(@"Push Notification Received");
-    [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
-    /**
-     Inform the JB4ASDK that the device received a remote notification
-     */
-    [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
+// The method will be called on the delegate when the user responded to the notification by opening the application, dismissing the notification or choosing a UNNotificationAction. The delegate must be set before the application returns from applicationDidFinishLaunching:.
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
     
-    /**
-     Is it a silent push?
-     */
-    if (userInfo[@"aps"][@"content-available"]) {
-        /**
-         Received a silent remote notification...
-         Indicate a silent push
-         */
-        NSLog(@"Silent Push Notification Received");
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
-    } else {
-        /**
-         Received a remote notification...
-         Clear the badge
-         */
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    // tell the MarketingCloudSDK about the notification
+    [[MarketingCloudSDK sharedInstance] sfmc_setNotificationRequest:response.notification.request];
+    
+    if (completionHandler != nil) {
+        completionHandler();
     }
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    UNMutableNotificationContent *theSilentPushContent = [[UNMutableNotificationContent alloc] init];
+    theSilentPushContent.userInfo = userInfo;
+    UNNotificationRequest *theSilentPushRequest = [UNNotificationRequest requestWithIdentifier:[NSUUID UUID].UUIDString content:theSilentPushContent trigger:nil];
     
-    handler(UIBackgroundFetchResultNoData);
+    [[MarketingCloudSDK sharedInstance] sfmc_setNotificationRequest:theSilentPushRequest];
+    
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 
 

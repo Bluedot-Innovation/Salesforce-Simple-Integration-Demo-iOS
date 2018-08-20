@@ -1,6 +1,3 @@
 target 'BDSalesforceIntegrationSample' do
-
-  pod 'JB4ASDK'
-  pod 'BluedotPointSDK'
-
+  pod 'BluedotPointSDK-Salesforce'
 end
