@@ -7,14 +7,13 @@
 //
 
 #import "ViewController.h"
-#import <BDSalesforceIntegrationWrapper/BDZoneEventReporter.h>
-#import "BDIntegrationManager.h"
-#import "ETPush.h"
-#import "BDAuthenticateData.h"
+#import <BluedotPointSDK-Salesforce/BluedotPointSDK-Salesforce.h>
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
+@import BDPointSDK;
 
 @interface ViewController () <BDPZoneEventReporterDelegate, BDPIntegrationManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *etPushStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *marketingCloudStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bdPointStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *zoneEventReporterStatus;
 @property (weak, nonatomic) IBOutlet UITextView *errorTextView;
@@ -29,7 +28,7 @@
     BDIntegrationManager.instance.delegate = self;
     BDZoneEventReporter.sharedInstance.delegate = self;
     
-    [BDIntegrationManager.instance authenticateETPush];
+    [BDIntegrationManager.instance authenticateMarketingCloudSDK];
     [BDIntegrationManager.instance authenticateBDPoint];
 }
 
@@ -55,9 +54,9 @@
 
 #pragma mark BDPIntegrationWrapperDelegate
 
-- (void)configureETPushSuccessful
+- (void)configureMarketingCloudSDKSuccessful
 {
-    _etPushStatusLabel.text = @"Started";
+    _marketingCloudStatusLabel.text = @"Started";
 }
 
 - (void)authenticatePointSDKSuccessful

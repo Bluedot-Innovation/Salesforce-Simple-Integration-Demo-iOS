@@ -1,0 +1,9 @@
+[{
+ "name": "production",
+ "appid": "<Marketing Cloud appid>",
+ "accesstoken": "<Marketing Cloud accesstoken>",
+ "etanalytics": false,
+ "pianalytics": false,
+ "location": false,
+ "inbox": false
+ }]

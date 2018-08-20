@@ -1,6 +1,0 @@
-framework module BDSalesforceIntegrationWrapper {
-  umbrella header "BDSalesforceIntegrationWrapper.h"
-
-  export *
-  module * { export * }
-}
