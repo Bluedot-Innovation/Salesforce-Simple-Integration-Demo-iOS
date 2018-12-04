@@ -1,7 +1,7 @@
 [{
  "name": "production",
- "appid": "<Marketing Cloud appid>",
- "accesstoken": "<Marketing Cloud accesstoken>",
+ "appid": "__your app id__",
+ "accesstoken": "__your access token__",
  "etanalytics": false,
  "pianalytics": false,
  "location": false,
