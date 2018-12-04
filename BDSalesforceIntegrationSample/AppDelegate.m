@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import <MarketingCloudSDK/MarketingCloudSDK.h>
+#import <BluedotPointSDK-Salesforce/BluedotPointSDK-Salesforce.h>
+@import UserNotifications;
+@import MarketingCloudSDK;
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
@@ -18,32 +20,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    if (@available(iOS 10, *)) {
-        // set the UNUserNotificationCenter delegate - the delegate must be set here in didFinishLaunchingWithOptions
-        [UNUserNotificationCenter currentNotificationCenter].delegate = self;
-        
-        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge
-                                                                            completionHandler:^(BOOL granted, NSError * _Nullable error) {
-                                                                                if (error == nil) {
-                                                                                    if (granted == YES) {
-                                                                                        dispatch_async(dispatch_get_main_queue(), ^{
-                                                                                            [[UIApplication sharedApplication] registerForRemoteNotifications];
-                                                                                        });
-                                                                                    }
+    // set the UNUserNotificationCenter delegate - the delegate must be set here in didFinishLaunchingWithOptions
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    
+    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge
+                                                                        completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                                                            if (error == nil) {
+                                                                                if (granted == YES) {
+                                                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                        [[UIApplication sharedApplication] registerForRemoteNotifications];
+                                                                                    });
                                                                                 }
-                                                                            }];
-    }
-    else {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < 100000
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
-                                                UIUserNotificationTypeBadge |
-                                                UIUserNotificationTypeSound |
-                                                UIUserNotificationTypeAlert
-                                                                                 categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-#endif
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }
+                                                                            }
+                                                                        }];
+    
+    [BDIntegrationManager.instance authenticateMarketingCloudSDK];
+    [BDIntegrationManager.instance authenticateBDPoint];
     
     return YES;
 }
@@ -104,14 +96,6 @@
     [[MarketingCloudSDK sharedInstance] sfmc_setNotificationRequest:theSilentPushRequest];
     
     completionHandler(UIBackgroundFetchResultNewData);
-}
-
-
-#pragma mark BDPIntegrationWrapperDelegate
-
-- (void)authenticationFailedWithError:(NSError *)error
-{
-    NSLog(@"error: %@", error.localizedDescription);
 }
 
 @end

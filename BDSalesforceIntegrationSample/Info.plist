@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BDPointApiKey</key>
-	<string>&lt;your PointSDK API key&gt;</string>
+	<string>__your Point Access API key__</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

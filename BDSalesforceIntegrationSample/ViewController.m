@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 #import <BluedotPointSDK-Salesforce/BluedotPointSDK-Salesforce.h>
-#import <MarketingCloudSDK/MarketingCloudSDK.h>
-@import BDPointSDK;
 
 @interface ViewController () <BDPZoneEventReporterDelegate, BDPIntegrationManagerDelegate>
 
@@ -28,13 +26,24 @@
     BDIntegrationManager.instance.delegate = self;
     BDZoneEventReporter.sharedInstance.delegate = self;
     
-    [BDIntegrationManager.instance authenticateMarketingCloudSDK];
-    [BDIntegrationManager.instance authenticateBDPoint];
+    _marketingCloudStatusLabel.text = [self authenticationStatusMessage:BDIntegrationManager.instance.salesforceAuthenticationStatus];
+    _bdPointStatusLabel.text = [self authenticationStatusMessage:BDIntegrationManager.instance.pointSDKAuthenticationStatus];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSString *)authenticationStatusMessage:(AuthenticationStatus)status {
+    switch (status) {
+        case AuthenticationStatusNotAuthenticated:
+            return @"Not authenticated";
+        case AuthenticationStatusAuthenticated:
+            return @"Started";
+        case AuthenticationStatusFailed:
+            return @"Failed";
+    }
 }
 
 #pragma mark BDPZoneEventReporterDelegate
