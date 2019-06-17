@@ -10,6 +10,7 @@
 #import <BluedotPointSDK-Salesforce/BluedotPointSDK-Salesforce.h>
 @import UserNotifications;
 @import MarketingCloudSDK;
+@import BDPointSDK;
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
@@ -35,7 +36,7 @@
                                                                         }];
     
     [BDIntegrationManager.instance authenticateMarketingCloudSDK];
-    [BDIntegrationManager.instance authenticateBDPoint];
+    [BDIntegrationManager.instance authenticateBDPointWithAuthorization:authorizedAlways];
     
     return YES;
 }
