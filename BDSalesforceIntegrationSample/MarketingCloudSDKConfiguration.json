@@ -1,9 +1,12 @@
 [{
- "name": "production",
- "appid": "__your app id__",
- "accesstoken": "__your access token__",
- "etanalytics": false,
- "pianalytics": false,
- "location": false,
- "inbox": false
- }]
+    "name": "production",
+    "appid": "__your app id__",
+    "accesstoken": "__your access token__",
+    "marketing_cloud_server_url": "__your app endpoint__",
+    "mid": "__your account mid__",
+    "etanalytics": false,
+    "pianalytics": false,
+    "location": false,
+    "inbox": false,
+    "uselegacypiidentifier": true
+}]
