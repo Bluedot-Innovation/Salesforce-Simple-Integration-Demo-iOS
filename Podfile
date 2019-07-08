@@ -1,3 +1,8 @@
+platform :ios, '10.0'
+
 target 'BDSalesforceIntegrationSample' do
-  pod 'BluedotPointSDK-Salesforce'
+  use_frameworks!
+
+  pod 'BluedotPointSDK'
+  pod 'MarketingCloudSDK'
 end

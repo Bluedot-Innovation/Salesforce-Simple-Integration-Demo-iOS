@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-#import <BluedotPointSDK-Salesforce/BluedotPointSDK-Salesforce.h>
+@import BDPointSDK;
+@import MarketingCloudSDK;
 
-@interface ViewController () <BDPZoneEventReporterDelegate, BDPIntegrationManagerDelegate>
+@interface ViewController () <BDPointDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *marketingCloudStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bdPointStatusLabel;
@@ -23,11 +24,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    BDIntegrationManager.instance.delegate = self;
-    BDZoneEventReporter.sharedInstance.delegate = self;
+    BOOL successful = NO;
+    NSError *error = nil;
     
-    _marketingCloudStatusLabel.text = [self authenticationStatusMessage:BDIntegrationManager.instance.salesforceAuthenticationStatus];
-    _bdPointStatusLabel.text = [self authenticationStatusMessage:BDIntegrationManager.instance.pointSDKAuthenticationStatus];
+    successful = [[MarketingCloudSDK sharedInstance] sfmc_configure:&error];
+    
+    if (successful == NO) {
+        _marketingCloudStatusLabel.text = @"Error";
+    } else {
+        _marketingCloudStatusLabel.text = @"Started";
+    }
+    
+    [BDLocationManager.instance setCustomEventMetaData:@{@"ContactKey": [[MarketingCloudSDK sharedInstance] sfmc_contactKey]}];
+    BDLocationManager.instance.sessionDelegate = self;
+    BDLocationManager.instance.locationDelegate = self;
+    
+    [BDLocationManager.instance authenticateWithApiKey:@"__your_ApiKey__" requestAuthorization:authorizedAlways];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,42 +47,62 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)authenticationStatusMessage:(AuthenticationStatus)status {
-    switch (status) {
-        case AuthenticationStatusNotAuthenticated:
-            return @"Not authenticated";
-        case AuthenticationStatusAuthenticated:
-            return @"Started";
-        case AuthenticationStatusFailed:
-            return @"Failed";
-    }
+- (void)authenticationFailedWithError:(NSError *)error {
+    _bdPointStatusLabel.text = @"Error";
 }
 
-#pragma mark BDPZoneEventReporterDelegate
-
-- (void)reportSuccessful
-{
-    _zoneEventReporterStatus.text = @"Successful";
+- (void)authenticationWasDeniedWithReason:(NSString *)reason {
+    _bdPointStatusLabel.text = @"Denied";
 }
 
-- (void)reportFailedWithError:(NSError *)error
-{
-    _zoneEventReporterStatus.text = @"Failed";
-    
-   NSString *errorMessage = [NSString stringWithFormat:@"Zone event report error: %@", error.localizedDescription];
-   _errorTextView.text = [_errorTextView.text stringByAppendingString:errorMessage];
-}
-
-#pragma mark BDPIntegrationWrapperDelegate
-
-- (void)configureMarketingCloudSDKSuccessful
-{
-    _marketingCloudStatusLabel.text = @"Started";
-}
-
-- (void)authenticatePointSDKSuccessful
-{
+- (void)authenticationWasSuccessful {
     _bdPointStatusLabel.text = @"Started";
+}
+
+- (void)didEndSession {
+    _bdPointStatusLabel.text = @"Finished";
+}
+
+- (void)didEndSessionWithError:(NSError *)error {
+    _bdPointStatusLabel.text = @"Finished";
+}
+
+- (void)willAuthenticateWithApiKey:(NSString *)apiKey {
+    _bdPointStatusLabel.text = @"Starting";
+}
+
+- (void)didCheckIntoFence:(BDFenceInfo *)fence
+                   inZone:(BDZoneInfo *)zoneInfo
+               atLocation: (BDLocationInfo *)location
+             willCheckOut:(BOOL)willCheckOut
+           withCustomData:(NSDictionary *)customData {
+    _zoneEventReporterStatus.text = @"Fence check-in";
+}
+
+- (void)didCheckIntoBeacon:(BDBeaconInfo *)beacon
+                    inZone:(BDZoneInfo *)zoneInfo
+                atLocation: (BDLocationInfo *)locationInfo
+             withProximity: (CLProximity)proximity
+              willCheckOut: (BOOL)willCheckOut
+            withCustomData: (NSDictionary *)customData {
+    _zoneEventReporterStatus.text = @"Beacon check-in";
+}
+
+- (void)didCheckOutFromFence:(BDFenceInfo *)fence
+                      inZone:(BDZoneInfo *)zoneInfo
+                      onDate:(NSDate *)date
+                withDuration:(NSUInteger)checkedInDuration
+              withCustomData:(NSDictionary *)customData {
+    _zoneEventReporterStatus.text = @"Fence check-out";
+}
+
+- (void)didCheckOutFromBeacon:(BDBeaconInfo *)beacon
+                       inZone:(BDZoneInfo *)zoneInfo
+                withProximity:(CLProximity)proximity
+                       onDate:(NSDate *)date
+                 withDuration:(NSUInteger)checkedInDuration
+               withCustomData:(NSDictionary *)customData {
+    _zoneEventReporterStatus.text = @"Fence check-out";
 }
 
 @end
