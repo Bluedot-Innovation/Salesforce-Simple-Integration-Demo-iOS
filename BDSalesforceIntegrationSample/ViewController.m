@@ -35,6 +35,8 @@
         _marketingCloudStatusLabel.text = @"Started";
     }
     
+    [[MarketingCloudSDK sharedInstance] sfmc_setContactKey:@"__your_contactKey__"];
+    
     [BDLocationManager.instance setCustomEventMetaData:@{@"ContactKey": [[MarketingCloudSDK sharedInstance] sfmc_contactKey]}];
     BDLocationManager.instance.sessionDelegate = self;
     BDLocationManager.instance.locationDelegate = self;
