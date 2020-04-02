@@ -2,7 +2,8 @@
 BDPointSDK.framework
 Pods
 *.xcworkspacedata
-
+*.xcworkspace
+xcuserdata/
 
 # Created by https://www.gitignore.io/api/osx,xcode,appcode,cocoapods
 

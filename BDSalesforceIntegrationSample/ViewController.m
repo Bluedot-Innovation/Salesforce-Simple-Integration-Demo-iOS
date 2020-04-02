@@ -27,7 +27,18 @@
     BOOL successful = NO;
     NSError *error = nil;
     
-    successful = [[MarketingCloudSDK sharedInstance] sfmc_configure:&error];
+    MarketingCloudSDKConfigBuilder *mcsdkBuilder = [MarketingCloudSDKConfigBuilder new];
+    [mcsdkBuilder sfmc_setApplicationId:@"__your app id__"];
+    [mcsdkBuilder sfmc_setAccessToken:@"__your access token__"];
+    [mcsdkBuilder sfmc_setMarketingCloudServerUrl:@"__your app endpoint__"];
+    [mcsdkBuilder sfmc_setMid:@"__your account mid__"];
+    [mcsdkBuilder sfmc_setAnalyticsEnabled:@(NO)];
+    [mcsdkBuilder sfmc_setPiAnalyticsEnabled:@(NO)];
+    [mcsdkBuilder sfmc_setLocationEnabled:@(NO)];
+    [mcsdkBuilder sfmc_setInboxEnabled:@(NO)];
+    [mcsdkBuilder sfmc_setUseLegacyPIIdentifier:@(YES)];
+
+    successful = [[MarketingCloudSDK sharedInstance] sfmc_configureWithDictionary:[mcsdkBuilder sfmc_build] error:&error];
     
     if (successful == NO) {
         _marketingCloudStatusLabel.text = @"Error";
@@ -41,7 +52,7 @@
     BDLocationManager.instance.sessionDelegate = self;
     BDLocationManager.instance.locationDelegate = self;
     
-    [BDLocationManager.instance authenticateWithApiKey:@"__your_ApiKey__" requestAuthorization:authorizedAlways];
+    [BDLocationManager.instance authenticateWithApiKey:@"__your bluedot api key__" requestAuthorization:authorizedAlways];
 }
 
 - (void)didReceiveMemoryWarning {
