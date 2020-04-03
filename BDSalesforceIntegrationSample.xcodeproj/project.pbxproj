@@ -22,7 +22,6 @@
 		9AC850EC1D6C06A000217E69 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850EB1D6C06A000217E69 /* MapKit.framework */; };
 		9AC850EE1D6C06AC00217E69 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850ED1D6C06AC00217E69 /* SystemConfiguration.framework */; };
 		9AC850F01D6C06B200217E69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC850EF1D6C06B200217E69 /* UIKit.framework */; };
-		E16F4C7E21264E1F005C37F0 /* MarketingCloudSDKConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E16F4C7D21264E1F005C37F0 /* MarketingCloudSDKConfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,7 +57,6 @@
 		9AC850EB1D6C06A000217E69 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9AC850ED1D6C06AC00217E69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9AC850EF1D6C06B200217E69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		E16F4C7D21264E1F005C37F0 /* MarketingCloudSDKConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MarketingCloudSDKConfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +116,6 @@
 				9AC850B21D6BEED600217E69 /* LaunchScreen.storyboard */,
 				9AC850B51D6BEED600217E69 /* Info.plist */,
 				9AC850A41D6BEED600217E69 /* Supporting Files */,
-				E16F4C7D21264E1F005C37F0 /* MarketingCloudSDKConfiguration.json */,
 			);
 			path = BDSalesforceIntegrationSample;
 			sourceTree = "<group>";
@@ -209,7 +206,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E16F4C7E21264E1F005C37F0 /* MarketingCloudSDKConfiguration.json in Resources */,
 				9AC850B41D6BEED600217E69 /* LaunchScreen.storyboard in Resources */,
 				9AC850B11D6BEED600217E69 /* Assets.xcassets in Resources */,
 				9AC850AF1D6BEED600217E69 /* Main.storyboard in Resources */,
