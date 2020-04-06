@@ -1,0 +1,20 @@
+PODS:
+  - BluedotPointSDK (15.1.2)
+  - MarketingCloudSDK (6.4.2)
+
+DEPENDENCIES:
+  - BluedotPointSDK
+  - MarketingCloudSDK
+
+SPEC REPOS:
+  trunk:
+    - BluedotPointSDK
+    - MarketingCloudSDK
+
+SPEC CHECKSUMS:
+  BluedotPointSDK: 34e17c7db08bc671875eb295454693b18897fafe
+  MarketingCloudSDK: 78bdce808556398b0f15e971a03002803a029502
+
+PODFILE CHECKSUM: e9c7c824c6861ad9230343e7b2cdc3c0b2b9706e
+
+COCOAPODS: 1.8.4
