@@ -10,7 +10,7 @@
 @import BDPointSDK;
 @import MarketingCloudSDK;
 
-@interface ViewController () <BDPointDelegate>
+@interface ViewController () <BDPGeoTriggeringEventDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *marketingCloudStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bdPointStatusLabel;
@@ -49,73 +49,39 @@
     [[MarketingCloudSDK sharedInstance] sfmc_setContactKey:@"__your_contactKey__"];
     
     [BDLocationManager.instance setCustomEventMetaData:@{@"ContactKey": [[MarketingCloudSDK sharedInstance] sfmc_contactKey]}];
-    BDLocationManager.instance.sessionDelegate = self;
-    BDLocationManager.instance.locationDelegate = self;
     
-    [BDLocationManager.instance authenticateWithApiKey:@"__your bluedot api key__" requestAuthorization:authorizedAlways];
+    BDLocationManager.instance.geoTriggeringEventDelegate = self;
+
+    [BDLocationManager.instance requestWhenInUseAuthorization];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)didEnterZone:(BDZoneEntryEvent *)enterEvent
+{
+    _zoneEventReporterStatus.text = @"Zone check-in";
 }
 
-- (void)authenticationFailedWithError:(NSError *)error {
-    _bdPointStatusLabel.text = @"Error";
+- (void)didExitZone:(BDZoneExitEvent *)exitEvent
+{
+    _zoneEventReporterStatus.text = @"Zone check-out";
 }
 
-- (void)authenticationWasDeniedWithReason:(NSString *)reason {
-    _bdPointStatusLabel.text = @"Denied";
+- (IBAction)startBluedotSDK:(id)sender {
+    
+    [BDLocationManager.instance initializeWithProjectId:@"YourBluedotProjectId" completion:^(NSError * _Nullable error) {
+        if(error != nil){
+            self->_bdPointStatusLabel.text = @"Initialization Failed";
+            return;
+        }
+        self->_bdPointStatusLabel.text = @"Initialized";
+        [BDLocationManager.instance requestAlwaysAuthorization];
+        
+        [BDLocationManager.instance startGeoTriggeringWithCompletion:^(NSError * _Nullable error) {
+            if(error != nil){
+                self->_bdPointStatusLabel.text = @"Start GeoTriggering Failed";
+                return;
+            }
+            self->_bdPointStatusLabel.text = @"GeoTriggering Started";
+        }];
+    }];
 }
-
-- (void)authenticationWasSuccessful {
-    _bdPointStatusLabel.text = @"Started";
-}
-
-- (void)didEndSession {
-    _bdPointStatusLabel.text = @"Finished";
-}
-
-- (void)didEndSessionWithError:(NSError *)error {
-    _bdPointStatusLabel.text = @"Finished";
-}
-
-- (void)willAuthenticateWithApiKey:(NSString *)apiKey {
-    _bdPointStatusLabel.text = @"Starting";
-}
-
-- (void)didCheckIntoFence:(BDFenceInfo *)fence
-                   inZone:(BDZoneInfo *)zoneInfo
-               atLocation: (BDLocationInfo *)location
-             willCheckOut:(BOOL)willCheckOut
-           withCustomData:(NSDictionary *)customData {
-    _zoneEventReporterStatus.text = @"Fence check-in";
-}
-
-- (void)didCheckIntoBeacon:(BDBeaconInfo *)beacon
-                    inZone:(BDZoneInfo *)zoneInfo
-                atLocation: (BDLocationInfo *)locationInfo
-             withProximity: (CLProximity)proximity
-              willCheckOut: (BOOL)willCheckOut
-            withCustomData: (NSDictionary *)customData {
-    _zoneEventReporterStatus.text = @"Beacon check-in";
-}
-
-- (void)didCheckOutFromFence:(BDFenceInfo *)fence
-                      inZone:(BDZoneInfo *)zoneInfo
-                      onDate:(NSDate *)date
-                withDuration:(NSUInteger)checkedInDuration
-              withCustomData:(NSDictionary *)customData {
-    _zoneEventReporterStatus.text = @"Fence check-out";
-}
-
-- (void)didCheckOutFromBeacon:(BDBeaconInfo *)beacon
-                       inZone:(BDZoneInfo *)zoneInfo
-                withProximity:(CLProximity)proximity
-                       onDate:(NSDate *)date
-                 withDuration:(NSUInteger)checkedInDuration
-               withCustomData:(NSDictionary *)customData {
-    _zoneEventReporterStatus.text = @"Fence check-out";
-}
-
 @end

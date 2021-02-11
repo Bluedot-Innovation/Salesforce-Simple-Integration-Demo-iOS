@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)startBluedotSDK:(id)sender;
 
 @end
 

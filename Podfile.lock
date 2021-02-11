@@ -1,6 +1,6 @@
 PODS:
-  - BluedotPointSDK (15.1.2)
-  - MarketingCloudSDK (6.4.2)
+  - BluedotPointSDK (15.4.1)
+  - MarketingCloudSDK (7.3.1)
 
 DEPENDENCIES:
   - BluedotPointSDK
@@ -12,9 +12,9 @@ SPEC REPOS:
     - MarketingCloudSDK
 
 SPEC CHECKSUMS:
-  BluedotPointSDK: 34e17c7db08bc671875eb295454693b18897fafe
-  MarketingCloudSDK: 78bdce808556398b0f15e971a03002803a029502
+  BluedotPointSDK: e6afdbe1c4a01d867d6533e1a84c9d03f213cba2
+  MarketingCloudSDK: 87e649880a6ecf61400b9150ccc4e81da2db61cd
 
 PODFILE CHECKSUM: e9c7c824c6861ad9230343e7b2cdc3c0b2b9706e
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1
